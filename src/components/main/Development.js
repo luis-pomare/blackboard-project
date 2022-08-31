@@ -1,5 +1,10 @@
 import React from 'react';
+import Card from './Card';
 
 export default function Development() {
-  return <div>Development</div>;
+  return (
+    <div>
+      <Card />
+    </div>
+  );
 }
