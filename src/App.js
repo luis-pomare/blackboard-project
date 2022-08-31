@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Dashboard from './components/Dashboard';
@@ -6,9 +7,11 @@ import Dashboard from './components/Dashboard';
 export default function App() {
   return (
     <>
-      <Sidebar />
-      <Header />
-      <Dashboard />
+      <BrowserRouter>
+        <Sidebar />
+        <Header />
+        <Dashboard />
+      </BrowserRouter>
     </>
   );
 }

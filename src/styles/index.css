@@ -15,10 +15,6 @@
   grid-template-columns: 1.5fr 8.5fr;
 }
 
-aside {
-  grid-area: aside;
-}
-
 main {
   grid-area: main;
 }

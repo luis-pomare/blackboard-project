@@ -1,0 +1,9 @@
+aside {
+  grid-area: aside;
+  display: flex;
+  flex-direction: column;
+}
+
+.active {
+  background-color: #fff;
+}
