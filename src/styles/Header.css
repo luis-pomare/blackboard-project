@@ -1,6 +1,8 @@
 header {
+  grid-area: header;
   background-color: #000;
   color: #fff;
+  height: fit-content;
 }
 
 h1 {
