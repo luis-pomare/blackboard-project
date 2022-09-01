@@ -18,7 +18,7 @@ export default function Dashboard() {
         <Route path='/development' element={<Development state={state} />} />
         <Route path='/design' element={<Design state={state} />} />
         <Route path='/marketing' element={<Marketing state={state} />} />
-        <Route path='/' element={<Tasks setState={setState} />} />
+        <Route path='/' element={<Tasks state={state} setState={setState} />} />
       </Routes>
     </main>
   );
