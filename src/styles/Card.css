@@ -1,0 +1,26 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #ebf0ee;
+  border-radius: 8px;
+  border: 1px solid #d0d9d4;
+  min-height: 150px;
+  width: 327px;
+  padding: 15px;
+}
+
+h2 {
+  text-align: center;
+  font-weight: 300;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 13px;
+  color: rgb(12, 12, 19);
+}
+
+.cardContent {
+  display: grid;
+  grid-template: 1fr 1fr/ 1fr 1fr;
+}

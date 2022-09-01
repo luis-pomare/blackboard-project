@@ -4,6 +4,7 @@ import Development from './main/Development';
 import Design from './main/Design';
 import Marketing from './main/Marketing';
 import Tasks from './main/Tasks';
+import '../styles/Dashboard.css';
 
 export default function Dashboard() {
   return (
