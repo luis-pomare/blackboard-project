@@ -7,6 +7,8 @@
   min-height: 150px;
   width: 327px;
   padding: 15px;
+  justify-content: center;
+  gap: 20px;
 }
 
 h2 {
@@ -15,12 +17,12 @@ h2 {
 }
 
 h3 {
-  font-weight: 400;
+  font-weight: 700;
   font-size: 13px;
-  color: rgb(12, 12, 19);
 }
 
 .cardContent {
   display: grid;
   grid-template: 1fr 1fr/ 1fr 1fr;
+  gap: 25px;
 }
