@@ -4,11 +4,11 @@
 
 ## Online version
 
-[Live version](https://630322bf80a0122e23b7ce78--playful-stardust-41d3fc.netlify.app/)
+[Live version](https://6312331cb1488300c4ba6272--statuesque-strudel-5d2077.netlify.app/)
 
 ## Preview image
 
-[<img src="./app_screenshot.png">](https://630322bf80a0122e23b7ce78--playful-stardust-41d3fc.netlify.app/)
+[<img src="./app_screenshot.png">](https://6312331cb1488300c4ba6272--statuesque-strudel-5d2077.netlify.app/)
 
 ## Built With
 
