@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../../styles/Tasks.css';
 
 export default function Tasks(props) {
   const { setState, state } = props;
@@ -8,6 +9,7 @@ export default function Tasks(props) {
     time: '',
     deadline: 'none',
     team: '',
+    message: 'noVisible',
   });
 
   const handleSubmit = (e) => {
@@ -18,33 +20,68 @@ export default function Tasks(props) {
       time: '',
       deadline: 'none',
       team: '',
+      message: 'visible',
     });
 
-    setState({
-      ...state,
-      development: { todo: 'update', time: 'now', deadline: 'no' },
-    });
+    const { todo, time, deadline, team } = form;
+
+    switch (team) {
+      case 'development':
+        setState({
+          ...state,
+          development: {
+            todo,
+            time,
+            deadline,
+          },
+        });
+        break;
+      case 'design':
+        setState({
+          ...state,
+          design: {
+            todo,
+            time,
+            deadline,
+          },
+        });
+        break;
+      case 'marketing':
+        setState({
+          ...state,
+          marketing: {
+            todo,
+            time,
+            deadline,
+          },
+        });
+        break;
+      default:
+        break;
+    }
   };
 
   const handleChange = (e) => {
     switch (e.target.id) {
       case 'todo':
-        setForm({ ...form, todo: e.target.value });
+        setForm({ ...form, todo: e.target.value, message: 'noVisible' });
         break;
       case 'time':
-        setForm({ ...form, time: e.target.value });
+        setForm({ ...form, time: e.target.value, message: 'noVisible' });
         break;
       case 'deadline':
-        setForm({ ...form, deadline: e.target.value });
+        setForm({ ...form, deadline: e.target.value, message: 'noVisible' });
         break;
       case 'team':
-        setForm({ ...form, team: e.target.value });
+        setForm({ ...form, team: e.target.value, message: 'noVisible' });
+        break;
+      default:
         break;
     }
   };
 
   return (
-    <div>
+    <div className='container'>
       <form onSubmit={handleSubmit}>
         <h2>Assign a task</h2>
         <label htmlFor='todo'>Task to-do:</label>
@@ -52,12 +89,11 @@ export default function Tasks(props) {
           type='text'
           id='todo'
           name='fname'
-          maxLength='30'
+          maxLength='50'
           required
           value={form.todo}
           onChange={handleChange}
         />
-        <br />
         <label htmlFor='time'>Time (between 1 and 15 hours):</label>
         <input
           type='number'
@@ -69,7 +105,6 @@ export default function Tasks(props) {
           onChange={handleChange}
           value={form.time}
         />
-        <br />
         <label htmlFor='deadline'>Deadline:</label>
         <select
           name='deadline'
@@ -78,11 +113,10 @@ export default function Tasks(props) {
           value={form.deadline}
         >
           <option value='none'>No deadline</option>
-          <option value='oneWeek'>1 week</option>
-          <option value='twoWeeks'>2 weeks</option>
-          <option value='threeWeeks'>3 weeks</option>
+          <option value='1 Week'>1 week</option>
+          <option value='2 weeks'>2 weeks</option>
+          <option value='3 Weeks'>3 weeks</option>
         </select>
-        <br />
         <label htmlFor='team'>Team:</label>
         <select
           name='team'
@@ -96,9 +130,11 @@ export default function Tasks(props) {
           <option value='design'>Design</option>
           <option value='marketing'>Marketing</option>
         </select>
-        <br />
-        <input type='submit' value='submit' />
+        <button type='submit' value='submit'>
+          submit
+        </button>
       </form>
+      <p className={form.message}>Task submited correctly!</p>
     </div>
   );
 }

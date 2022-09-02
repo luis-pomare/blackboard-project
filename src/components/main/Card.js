@@ -3,7 +3,7 @@ import '../../styles/Card.css';
 
 export default function card(props) {
   const { todo, time, deadline, team } = props.info;
-  return (
+  return todo.length > 0 ? (
     <section className='card'>
       <h2>Next task for the team</h2>
       <div className='cardContent'>
@@ -13,7 +13,7 @@ export default function card(props) {
         </span>
         <span>
           <h3>Time:</h3>
-          <p>{time}</p>
+          <p>{time} hours</p>
         </span>
         <span>
           <h3>Deadline:</h3>
@@ -25,5 +25,9 @@ export default function card(props) {
         </span>
       </div>
     </section>
+  ) : (
+    <p className='visible'>
+      Please add a task for this team in the "Tasks" window.
+    </p>
   );
 }
